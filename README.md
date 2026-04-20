@@ -1,45 +1,36 @@
 # Raghu's Clicks — Digital Adobe
 
-A personal photography portfolio showcasing clouds, skies, and moments at **KL University, Vijayawada** — captured by **Raghu** over 4+ years (2022–2026).
+> **Every street corner, every sky, every quiet moment in between — the world through my lens, one curious click at a time.**
 
-## 🚀 Deploy to GitHub Pages (Free Hosting)
+Welcome to my digital adobe. This isn't just a portfolio website; it's a visual archive of my curiosity. I'm not a professional—I'm just deeply curious. 
 
-### Step 1 — Create a GitHub repo
-1. Go to [github.com](https://github.com) → **New repository**
-2. Name it `raghus-clicks` (or anything you like)
-3. Set it to **Public**
-4. Click **Create repository**
+I pick up my phone or camera and point it at whatever stirs something inside me. A passing cloud, a stranger's expression, peeling paint on an old wall, or an empty street after the rain. Photography is my way of slowing down and truly seeing the world. Every frame is a question I'm still trying to answer.
 
-### Step 2 — Upload files
-In the repo, click **"uploading an existing file"** and drag-drop:
-- `index.html`
-- `style.css`
-- `script.js`
-- All `.webp` images from this folder
-
-Or use Git:
-```bash
-cd "/Users/raghu/Desktop/Clouds & KLu"
-git init
-git add index.html style.css script.js *.webp PANO*.webp dji_mimo*.webp Untitled.webp image.webp
-git commit -m "Initial deploy: Raghu's Clicks"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/raghus-clicks.git
-git push -u origin main
-```
-
-### Step 3 — Enable GitHub Pages
-1. Go to repo → **Settings** → **Pages**
-2. Source: **Deploy from a branch** → `main` → `/ (root)`
-3. Click **Save**
-
-Your site will be live at:
-```
-https://YOUR_USERNAME.github.io/raghus-clicks/
-```
-(Takes ~2 minutes to go live)
+[**View Live Site**](https://raghu-clicks.vercel.app) *(Update this with your actual Vercel URL)*
 
 ---
 
-## Local Preview
-Just open `index.html` in any browser — no server needed.
+## 📷 What You'll Find Here
+- **Skies & Horizons:** A massive collection of cloud formations, sunsets, and sunrises.
+- **Street & Chaos:** The beauty hidden in the ordinary, everyday moments.
+- **Light & Shadows:** Exploring the world through deep contrasts and cinematic moods.
+- **Honest Captures:** Genuine, in-the-moment frames without heavy manipulation.
+
+## 🛠 Tech Behind the Frames
+This site was built entirely from scratch as a passion project. The goal was to create a premium, high-performance cinematic experience without relying on heavy frameworks or bloated gallery libraries. **Zero frameworks. Zero dependencies.**
+
+- **Frontend:** Pure HTML5 and Vanilla CSS.
+- **Design System:** Custom deep-red aesthetic (`#0d0404` and `#c0392b`) with smooth animations and subtle glassmorphism (`backdrop-filter`) for the UI.
+- **Vanilla JavaScript:** 
+  - **Justified Layout Engine:** A completely custom math engine that reads native image aspect ratios and perfectly fits them into edge-to-edge rows (identical to how Flickr or Google Photos render their grids).
+  - **Custom Lightbox:** Fully responsive photo viewer with smooth scale-up transitions, keyboard navigation (`←`/`→`/`Esc`), and mobile touch-swipe gestures.
+  - **Scroll Reveal:** Powered by the `IntersectionObserver` API for buttery-smooth image fade-ins as you scroll down the page.
+- **Deployment & Hosting:** Deployed on **Vercel** for lightning-fast global CDN delivery, configured with aggressive image caching headers via `vercel.json`.
+
+---
+
+## 🤝 Connect
+- **Captured by:** Raghu
+- **Location:** KL University, Vijayawada & beyond.
+
+*© Raghu · All frames reserved · Still clicking, still curious.*
