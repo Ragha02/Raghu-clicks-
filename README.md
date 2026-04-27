@@ -1,4 +1,4 @@
-# Raghu's Clicks — Digital Adobe
+ # Raghu's Clicks — Digital Adobe
 
 > **Every street corner, every sky, every quiet moment in between — the world through my lens, one curious click at a time.**
 
