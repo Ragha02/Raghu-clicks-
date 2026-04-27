@@ -1,22 +1,30 @@
- # Raghu's Clicks — Digital Adobe
+ # Raghu — Creative Engineer & Photographer
 
-> **Every street corner, every sky, every quiet moment in between — the world through my lens, one curious click at a time.**
+> **"I'm equally drawn to clean system design and imperfect human moments—balancing logic with instinct, structure with creativity, code with composition."**
 
-Welcome to my digital adobe. This isn't just a portfolio website; it's a visual archive of my curiosity. I'm not a professional—I'm just deeply curious. 
+Welcome to my digital adobe. This repository contains the source code for my portfolio, showcasing an intersection of high-performance front-end engineering and cinematic visual design.
 
-I pick up my phone or camera and point it at whatever stirs something inside me. A passing cloud, a stranger's expression, peeling paint on an old wall, or an empty street after the rain. Photography is my way of slowing down and truly seeing the world. Every frame is a question I'm still trying to answer.
+## 🚀 The Architecture
+This portfolio is built with speed, fluid physics, and high-end editorial aesthetics in mind:
+- **Core:** React & Vite for lightning-fast HMR and optimized production builds.
+- **Animation Engine:** GSAP (GreenSock) for high-performance timeline sequencing, stagger animations, and scroll-triggered reveals.
+- **Scroll Physics:** Lenis for butter-smooth, interpolated scrolling that mimics physical momentum.
+- **Styling:** Pure Vanilla CSS with complex custom properties, CSS grids, and backdrop-filters. No heavy CSS frameworks—every pixel is handcrafted.
 
-
+## 🎨 Design Highlights
+- **Cinematic Noise & Dark Mode:** A custom global SVG noise filter over a deep `#0a0404` crimson-black gradient to emulate physical camera film.
+- **The Marquee Gallery:** A GPU-accelerated infinite scrolling filmstrip that pauses on hover and clicks into a fully immersive GSAP-powered Lightbox.
+- **The Physical Scrapbook:** An interactive CSS-only "Scrapbook" using overlapping polaroids, realistic paperclips, and layered folder tabs.
+- **The AI Terminal:** A glass-morphic macOS terminal window that types out my core passions and metrics in beautifully formatted JSON.
 
 ---
 
-## 📷 What You'll Find Here
-- **Skies & Horizons:** A massive collection of cloud formations, sunsets, and sunrises.
-- **Street & Chaos:** The beauty hidden in the ordinary, everyday moments.
-- **Light & Shadows:** Exploring the world through deep contrasts and cinematic moods.
-- **Honest Captures:** Genuine, in-the-moment frames without heavy manipulation.
----
+### Local Development
+To run this project locally:
+```bash
+cd portfolio
+npm install
+npm run dev
+```
 
-
-
-*© Raghu · All frames reserved · Still clicking, still curious.*
+*© Raghu · Building systems, capturing moments. All frames reserved.*
