@@ -49,9 +49,31 @@ const ArrowIcon = () => (
 )
 
 function ProjectCard({ proj }) {
+  const cardRef = useRef(null)
+
+  const handleMouseMove = (e) => {
+    const card = cardRef.current
+    if (!card) return
+    const rect = card.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+    const centerX = rect.width / 2
+    const centerY = rect.height / 2
+    
+    const rotateX = ((y - centerY) / centerY) * -8
+    const rotateY = ((x - centerX) / centerX) * 8
+
+    gsap.to(card, { rotateX, rotateY, duration: 0.4, ease: 'power2.out' })
+  }
+
+  const handleMouseLeave = () => {
+    if (!cardRef.current) return
+    gsap.to(cardRef.current, { rotateX: 0, rotateY: 0, duration: 0.7, ease: 'power3.out' })
+  }
+
   if (proj.featured) {
     return (
-      <div className="proj-card featured">
+      <div className="proj-card featured" ref={cardRef} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
         <div>
           <p className="proj-num">{proj.num} / {proj.tagline}</p>
           <h3 className="proj-name">{proj.name}</h3>
@@ -66,7 +88,7 @@ function ProjectCard({ proj }) {
     )
   }
   return (
-    <div className="proj-card">
+    <div className="proj-card" ref={cardRef} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
       <p className="proj-num">{proj.num} / {proj.tagline}</p>
       <h3 className="proj-name">{proj.name}</h3>
       <p className="proj-desc">{proj.desc}</p>
