@@ -1,9 +1,5 @@
 import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useGSAP } from '@gsap/react'
 import { useRef, useState, useEffect, useCallback } from 'react'
-
-const H = 220 // strip height px
 
 const IMAGES = [
   { src:'IMG_20220808_053707.webp', label:'First Light', ratio:1.333 },
@@ -49,8 +45,6 @@ const IMAGES = [
   { src:'image.webp', label:'Home', ratio:1.333 },
 ]
 
-// Single row, duplicated for infinite scroll
-const ROW1 = [...IMAGES, ...IMAGES]
 
 const CDN_URL = 'https://di4nbe8gl5nhl.cloudfront.net/'
 
@@ -132,74 +126,25 @@ function FullscreenOverlay({ isOpen, startIdx, onClose }) {
 
 // ── Main Gallery ─────────────────────────────────────────
 export default function Gallery() {
-  const containerRef = useRef(null)
-  const row1WrapRef  = useRef(null)
   const [overlayOpen, setOverlayOpen] = useState(false)
   const [startIdx,    setStartIdx]    = useState(null)
 
-  const openAt = useCallback(i => { setStartIdx(i); setOverlayOpen(true) }, [])
-
-  useGSAP(() => {
-    const el = containerRef.current
-
-    // ── Entrance: row fades + slides in
-    ScrollTrigger.create({
-      trigger: el, start: 'top 80%', once: true,
-      onEnter: () => {
-        gsap.from('.filmstrip-rows', { opacity: 0, duration: 0.9, ease: 'power2.out' })
-        gsap.from(row1WrapRef.current, { x: '5%', opacity: 0, duration: 1.2, ease: 'power3.out' })
-      },
-    })
-
-    // ── Chapter header ─────────────────────────────────
-    gsap.from('.gallery-section .chapter-header', {
-      y: 50, opacity: 0, duration: 0.9, ease: 'power3.out',
-      scrollTrigger: { trigger: el, start: 'top 80%', toggleActions: 'play none none reverse' },
-    })
-  }, { scope: containerRef })
+  useEffect(() => {
+    const handleOpen = (e) => {
+      setStartIdx(e.detail?.startIdx || 0)
+      setOverlayOpen(true)
+    }
+    window.addEventListener('open-gallery', handleOpen)
+    return () => window.removeEventListener('open-gallery', handleOpen)
+  }, [])
 
   return (
-    <section className="gallery-section" id="gallery" ref={containerRef}>
-      <div className="chapter-header">
-        <div className="chapter-ghost" aria-hidden="true">CLICKS</div>
-        <p className="chapter-num">02 / CLICKS</p>
-        <h2 className="chapter-title"><em>Frames</em> by Raghu</h2>
-        <div className="chapter-divider" />
-      </div>
-
-      {/* Single auto-scrolling row */}
-      <div className="filmstrip-rows">
-        <div className="filmstrip-row-wrap" ref={row1WrapRef}>
-          <div className="filmstrip-inner marquee-left" style={{ height: H }}>
-            {ROW1.map((img, i) => (
-              <div key={`r1-${i}`} className="filmstrip-item"
-                style={{ width: img.ratio * H, height: H }}
-                onClick={() => openAt(i % IMAGES.length)}
-              >
-                <img src={`${CDN_URL}${img.src}`} alt={img.label} loading="lazy" decoding="async" />
-                <div className="filmstrip-item-label">{img.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* View All */}
-      <div className="filmstrip-footer-bar">
-        <button className="view-all-btn" onClick={() => openAt(0)}>
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
-            <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
-          </svg>
-          View All {IMAGES.length} Frames
-        </button>
-      </div>
-
+    <>
       <FullscreenOverlay
         isOpen={overlayOpen}
         startIdx={startIdx}
         onClose={() => { setOverlayOpen(false); setStartIdx(null) }}
       />
-    </section>
+    </>
   )
 }

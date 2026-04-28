@@ -9,11 +9,16 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  const openGallery = (e) => {
+    e.preventDefault()
+    window.dispatchEvent(new CustomEvent('open-gallery', { detail: { startIdx: 0 } }))
+  }
+
   return (
     <nav className={`nav${scrolled ? ' scrolled' : ''}`} id="nav">
       <div className="nav-logo">Raghu<span>.</span></div>
       <div className="nav-links">
-        <a href="#gallery" className="nav-link">Clicks</a>
+        <a href="#" onClick={openGallery} className="nav-link">Frames</a>
         <a href="#projects" className="nav-link">Build</a>
         <a href="#vibes" className="nav-link">Vibes</a>
         <a href="#about" className="nav-link">Me</a>
