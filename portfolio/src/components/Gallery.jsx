@@ -52,6 +52,8 @@ const IMAGES = [
 // Single row, duplicated for infinite scroll
 const ROW1 = [...IMAGES, ...IMAGES]
 
+const CDN_URL = 'https://di4nbe8gl5nhl.cloudfront.net/'
+
 // ── Lightbox ─────────────────────────────────────────────
 function Lightbox({ images, index, onClose, onChange }) {
   const img = images[index]
@@ -77,7 +79,7 @@ function Lightbox({ images, index, onClose, onChange }) {
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><polyline points="9,6 15,12 9,18"/></svg>
       </button>
       <div className="lb-stage">
-        <img key={img.src} src={img.src} alt={img.label} />
+        <img key={img.src} src={`${CDN_URL}${img.src}`} alt={img.label} decoding="async" fetchpriority="high" />
       </div>
       <div className="lb-bar">
         <span className="lb-label">{img.label}</span>
@@ -116,7 +118,7 @@ function FullscreenOverlay({ isOpen, startIdx, onClose }) {
       <div className="gallery-ov-grid">
         {IMAGES.map((img, i) => (
           <div key={img.src} className="gallery-ov-item" onClick={() => setLbIdx(i)}>
-            <img src={img.src} alt={img.label} loading="lazy" />
+            <img src={`${CDN_URL}${img.src}`} alt={img.label} loading="lazy" decoding="async" />
             <div className="gallery-ov-item-label"><span>{img.label}</span></div>
           </div>
         ))}
@@ -174,7 +176,7 @@ export default function Gallery() {
                 style={{ width: img.ratio * H, height: H }}
                 onClick={() => openAt(i % IMAGES.length)}
               >
-                <img src={img.src} alt={img.label} loading="lazy" />
+                <img src={`${CDN_URL}${img.src}`} alt={img.label} loading="lazy" decoding="async" />
                 <div className="filmstrip-item-label">{img.label}</div>
               </div>
             ))}
