@@ -1,6 +1,6 @@
+"use client";
 import { useEffect } from 'react'
 import Lenis from 'lenis'
-import './index.css'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import Gallery from './components/Gallery'

@@ -1,8 +1,7 @@
+"use client";
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { useRef } from 'react'
-import me1 from '../../ragh 1.jpg'
-import me2 from '../../ragh 2 .jpg'
 
 export default function About() {
   const containerRef = useRef(null)
@@ -116,7 +115,7 @@ export default function About() {
               <div className="polaroid-stack">
                 <div className="polaroid p-bg">
                   <div className="p-photo bg-dark">
-                    <img src={me2} alt="Raghu Background" />
+                    <img src="/ragh 2 .jpg" alt="Raghu Background" />
                   </div>
                 </div>
                 <div className="polaroid p-bg2">
@@ -129,7 +128,7 @@ export default function About() {
                     <div className="clip-part2"></div>
                   </div>
                   <div className="p-photo">
-                    <img src={me1} alt="Raghu" />
+                    <img src="/ragh 1.jpg" alt="Raghu" />
                   </div>
                   <div className="p-caption">RAGHU</div>
                 </div>
