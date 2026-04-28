@@ -1,6 +1,9 @@
 "use client";
 import { useEffect } from 'react'
 import Lenis from 'lenis'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from '@gsap/react'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import Gallery from './components/Gallery'
@@ -9,6 +12,10 @@ import Vibes from './components/Vibes'
 import About from './components/About'
 import Footer from './components/Footer'
 import Cursor from './components/Cursor'
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger, useGSAP)
+}
 
 export default function App() {
   useEffect(() => {
