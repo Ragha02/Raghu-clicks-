@@ -35,7 +35,7 @@ export default function About() {
       <div className="about-inner scrapbook-layout">
         <div className="about-left">
           <p className="about-bio">
-            CS engineer by training, photographer at heart. I build at the intersection of agentic AI and full-stack systems, creating autonomous workflows while exploring data engineering and cloud infrastructure.
+            23 years old. CS engineer by training, photographer at heart. I build at the intersection of agentic AI and full-stack systems, creating autonomous workflows while exploring data engineering and cloud infrastructure.
           </p>
           <p className="about-bio">
             My work revolves around designing ML pipelines, orchestrating data flows, and deploying scalable, cloud-native solutions that actually hold up in real-world use.

@@ -111,6 +111,7 @@ export default function Vibes() {
 <span className="tc-punc">&#123;</span>
   <span className="tc-key">"id"</span><span className="tc-punc">:</span> <span className="tc-str">"raghu_clicks"</span><span className="tc-punc">,</span>
   <span className="tc-key">"role"</span><span className="tc-punc">:</span> <span className="tc-str">"Creative Engineer"</span><span className="tc-punc">,</span>
+  <span className="tc-key">"age"</span><span className="tc-punc">:</span> <span className="tc-num">23</span><span className="tc-punc">,</span>
   <span className="tc-key">"core_passions"</span><span className="tc-punc">:</span> <span className="tc-punc">[</span>
     <span className="tc-str">"Agentic AI"</span><span className="tc-punc">,</span>
     <span className="tc-str">"Data Engineering"</span><span className="tc-punc">,</span>
