@@ -4,14 +4,16 @@ import Lenis from 'lenis'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
+import dynamic from 'next/dynamic'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
-import Gallery from './components/Gallery'
-import Projects from './components/Projects'
-import Vibes from './components/Vibes'
-import About from './components/About'
-import Footer from './components/Footer'
 import Cursor from './components/Cursor'
+
+const Gallery = dynamic(() => import('./components/Gallery'))
+const Projects = dynamic(() => import('./components/Projects'))
+const Vibes = dynamic(() => import('./components/Vibes'))
+const About = dynamic(() => import('./components/About'))
+const Footer = dynamic(() => import('./components/Footer'))
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger, useGSAP)
