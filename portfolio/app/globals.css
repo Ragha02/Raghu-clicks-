@@ -497,28 +497,28 @@ a { text-decoration:none; color:inherit; }
 .social-link svg { width:16px; height:16px; }
 
 .about-right { position:relative; height:600px; display:flex; align-items:center; justify-content:flex-end; }
-.scrapbook-folder { position:relative; width:480px; height:520px; background:#c5ab8d; border-radius:8px 0 8px 8px; box-shadow:-20px 20px 60px rgba(0,0,0,0.8), inset 0 0 40px rgba(0,0,0,0.1); }
-.folder-tab { position:absolute; left:-40px; top:50px; transform:rotate(-90deg); transform-origin:bottom right; font-family:'Caveat', cursive; font-size:1.8rem; color:rgba(0,0,0,0.4); }
+.scrapbook-folder { position:relative; width:480px; height:520px; background:linear-gradient(145deg,#190505,#120303); border-radius:8px 0 8px 8px; box-shadow:-20px 20px 60px rgba(0,0,0,0.85), inset 0 0 40px rgba(0,0,0,0.2); border:1px solid rgba(192,57,43,0.2); }
+.folder-tab { position:absolute; left:-44px; top:60px; transform:rotate(-90deg); transform-origin:bottom right; font-family:var(--font-serif); font-style:italic; font-size:1.1rem; color:rgba(192,57,43,0.4); letter-spacing:.1em; }
 .folder-body { padding:2rem; position:relative; height:100%; display:flex; flex-direction:column; }
 
-.marker-title { font-family:'Permanent Marker', cursive; font-size:2rem; color:#111; display:flex; align-items:center; justify-content:space-between; transform:rotate(-3deg); margin-bottom:2rem; background:#eee; padding:.5rem 1rem; box-shadow:2px 4px 10px rgba(0,0,0,0.2); }
-.marker-title svg { width:24px; }
+.marker-title { font-family:var(--font-head); font-size:1.55rem; font-weight:700; font-style:italic; color:#fff; display:flex; align-items:center; justify-content:space-between; transform:rotate(-2deg); margin-bottom:2rem; background:rgba(192,57,43,0.12); padding:.65rem 1.1rem; box-shadow:2px 4px 20px rgba(0,0,0,0.5); border:1px solid rgba(192,57,43,0.3); border-radius:4px; letter-spacing:.02em; }
+.marker-title svg { width:22px; stroke:var(--red-light); }
 
 .polaroid-stack { position:relative; flex:1; }
-.polaroid { position:absolute; width:260px; background:#eee; padding:12px 12px 40px 12px; box-shadow:0 10px 30px rgba(0,0,0,0.4); border:1px solid #ddd; }
+.polaroid { position:absolute; width:260px; background:#f5f0ee; padding:12px 12px 44px 12px; box-shadow:0 12px 40px rgba(0,0,0,0.6); border:1px solid rgba(255,255,255,0.15); }
 .p-bg { right:20px; top:10px; transform:rotate(8deg); }
 .p-bg2 { right:80px; top:40px; transform:rotate(-6deg); }
 .p-main { right:30px; top:20px; transform:rotate(-2deg); z-index:10; }
 
-.p-photo { width:100%; height:260px; background:#333; overflow:hidden; }
-.p-photo img { width:100%; height:100%; object-fit:cover; filter:contrast(1.1) sepia(0.2); }
+.p-photo { width:100%; height:260px; background:#1a0505; overflow:hidden; }
+.p-photo img { width:100%; height:100%; object-fit:cover; object-position:center top; filter:contrast(1.05) saturate(0.95); }
 .p-photo.bg-red { background:#5c1a1a; }
 .p-photo.bg-dark { background:#1a0505; }
-.p-caption { position:absolute; bottom:10px; left:0; width:100%; text-align:center; font-family:'Permanent Marker', cursive; font-size:1.2rem; color:#222; }
+.p-caption { position:absolute; bottom:10px; left:0; width:100%; text-align:center; font-family:var(--font-head); font-size:1.05rem; font-weight:700; letter-spacing:.25em; color:#1a0505; text-transform:uppercase; }
 
 .paperclip { position:absolute; top:-20px; left:40%; z-index:20; width:20px; height:50px; }
-.clip-part1 { position:absolute; width:14px; height:40px; border:2px solid #silver; border-color:#d4d4d4; border-radius:10px; box-shadow:2px 2px 2px rgba(0,0,0,0.3); }
-.clip-part2 { position:absolute; top:8px; left:4px; width:6px; height:25px; border:2px solid #silver; border-color:#d4d4d4; border-radius:10px; border-bottom:none; box-shadow:2px 2px 2px rgba(0,0,0,0.3); }
+.clip-part1 { position:absolute; width:14px; height:40px; border:2px solid #b8b8b8; border-radius:10px; box-shadow:2px 2px 2px rgba(0,0,0,0.3); }
+.clip-part2 { position:absolute; top:8px; left:4px; width:6px; height:25px; border:2px solid #b8b8b8; border-radius:10px; border-bottom:none; box-shadow:2px 2px 2px rgba(0,0,0,0.3); }
 
 .folder-contact { position:absolute; bottom:20px; right:30px; display:flex; flex-direction:column; gap:.8rem; font-family:'Caveat', cursive; font-size:1.4rem; color:#222; }
 .f-row { display:flex; align-items:center; gap:.8rem; }
