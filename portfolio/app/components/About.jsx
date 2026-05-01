@@ -18,7 +18,7 @@ export default function About() {
     tl.from('.about-left > *', { x: -40, opacity: 0, duration: 0.8, stagger: 0.1, ease: 'power3.out' })
       .from('.scrapbook-folder', { x: 50, opacity: 0, duration: 1, ease: 'power3.out' }, '-=0.6')
       .from('.polaroid-stack .polaroid', {
-        y: 40, rotation: gsap.utils.random(-10, 10, true), opacity: 0, 
+        y: 40, rotation: gsap.utils.random(-10, 10, true), opacity: 0,
         duration: 0.8, stagger: 0.15, ease: 'back.out(1.5)'
       }, '-=0.5')
   }, { scope: containerRef })

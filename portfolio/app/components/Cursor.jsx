@@ -7,6 +7,11 @@ export default function Cursor() {
   const dotRef  = useRef(null)
   const ringRef = useRef(null)
 
+  // Don't render or run on touch/mobile devices
+  if (typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches) {
+    return null
+  }
+
   useGSAP(() => {
     const dot  = dotRef.current
     const ring = ringRef.current
