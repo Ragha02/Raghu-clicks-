@@ -34,6 +34,7 @@ export default function Nav() {
         <div className="nav-links nav-links--desktop">
           <a href="#" onClick={openGallery} className="nav-link">Frames</a>
           <a href="#projects" className="nav-link">Build</a>
+          <a href="#experience" className="nav-link">Work</a>
           <a href="#vibes" className="nav-link">Vibes</a>
           <a href="#about" className="nav-link">Me</a>
         </div>
@@ -57,6 +58,7 @@ export default function Nav() {
         <nav className="mobile-nav">
           <a href="#" onClick={openGallery} className="mobile-nav-link">Frames</a>
           <a href="#projects" onClick={close} className="mobile-nav-link">Build</a>
+          <a href="#experience" onClick={close} className="mobile-nav-link">Work</a>
           <a href="#vibes" onClick={close} className="mobile-nav-link">Vibes</a>
           <a href="#about" onClick={close} className="mobile-nav-link">Me</a>
           <a href="https://github.com/Ragha02" target="_blank" rel="noreferrer" className="mobile-nav-link mobile-nav-cta">GitHub ↗</a>
