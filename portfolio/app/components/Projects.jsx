@@ -127,7 +127,7 @@ export default function Projects() {
   }, { scope: containerRef })
 
   return (
-    <section className="projects-section" id="projects" ref={containerRef}>
+    <section className="projects-section" ref={containerRef}>
       <div className="chapter-header">
         <div className="chapter-ghost" aria-hidden="true">BUILD</div>
         <p className="chapter-num">03 / BUILD</p>

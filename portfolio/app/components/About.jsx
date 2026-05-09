@@ -24,7 +24,7 @@ export default function About() {
   }, { scope: containerRef })
 
   return (
-    <section className="about-section" id="about" ref={containerRef}>
+    <section className="about-section" ref={containerRef}>
       <div className="chapter-header">
         <div className="chapter-ghost" aria-hidden="true">ME</div>
         <p className="chapter-num">05 / ME</p>

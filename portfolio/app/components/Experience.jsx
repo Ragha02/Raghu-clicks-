@@ -84,7 +84,7 @@ export default function Experience() {
   }, { scope: containerRef })
 
   return (
-    <section className="exp-section" id="experience" ref={containerRef}>
+    <section className="exp-section" ref={containerRef}>
       <div className="chapter-header">
         <div className="chapter-ghost" aria-hidden="true">XP</div>
         <p className="chapter-num">02.5 / EXPERIENCE</p>

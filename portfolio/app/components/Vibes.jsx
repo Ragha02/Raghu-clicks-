@@ -71,7 +71,7 @@ export default function Vibes() {
   }, { scope: containerRef })
 
   return (
-    <section className="vibes-section" id="vibes" ref={containerRef}>
+    <section className="vibes-section" ref={containerRef}>
       <div className="chapter-header">
         <div className="chapter-ghost" aria-hidden="true">VIBES</div>
         <p className="chapter-num">04 / VIBES</p>

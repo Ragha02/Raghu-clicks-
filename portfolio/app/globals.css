@@ -1076,6 +1076,94 @@ a { text-decoration:none; color:inherit; }
   }
 }
 
+/* ── SITE WRAP (hidden until loader done) ── */
+.site-wrap {
+  opacity: 0;
+  transition: opacity .6s var(--ease);
+}
+.site-wrap.site-visible {
+  opacity: 1;
+}
+
+/* ── CINEMATIC LOADER ── */
+.loader-screen {
+  position: fixed; inset: 0; z-index: 99999;
+  background: var(--bg);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column;
+  transition: opacity .7s var(--ease), transform .7s var(--ease);
+}
+.loader-screen.loader-hide {
+  opacity: 0;
+  transform: scale(1.04);
+  pointer-events: none;
+}
+.loader-inner {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 1.2rem; width: min(340px, 80vw);
+}
+.loader-logo {
+  font-family: var(--font-head); font-size: clamp(2.8rem, 8vw, 4rem);
+  font-weight: 700; letter-spacing: -.05em; color: #fff;
+  animation: loaderLogoIn .8s var(--ease) both;
+}
+.loader-logo span { color: var(--red-light); }
+.loader-tagline {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: .85rem; font-weight: 300;
+  color: rgba(245,198,194,.4); letter-spacing: .08em;
+  animation: loaderLogoIn .8s .15s var(--ease) both;
+}
+.loader-track {
+  width: 100%; height: 1px;
+  background: rgba(192,57,43,.18); border-radius: 1px;
+  overflow: hidden; position: relative;
+  animation: loaderLogoIn .6s .3s var(--ease) both;
+}
+.loader-bar {
+  position: absolute; left: 0; top: 0; bottom: 0;
+  background: linear-gradient(90deg, var(--red-deep), var(--red-light));
+  border-radius: 1px;
+  transition: width .08s linear;
+  box-shadow: 0 0 8px rgba(231,76,60,.5);
+}
+.loader-count {
+  font-family: var(--font-mono); font-size: .72rem;
+  font-weight: 600; letter-spacing: .25em;
+  color: rgba(192,57,43,.5);
+  animation: loaderLogoIn .6s .4s var(--ease) both;
+  align-self: flex-end;
+}
+
+@keyframes loaderLogoIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── LAZY SECTION SKELETON ── */
+.lazy-skeleton {
+  position: relative; overflow: hidden;
+  background: var(--bg);
+  display: flex; align-items: center; justify-content: center;
+}
+.lazy-shimmer {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(192,57,43,.04) 40%,
+    rgba(192,57,43,.07) 50%,
+    rgba(192,57,43,.04) 60%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmerMove 2s ease-in-out infinite;
+}
+@keyframes shimmerMove {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
 /* ── Keyframes ── */
 @keyframes fadeUp { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
 @keyframes lineGrow { from{transform:translateX(-50%) scaleY(0);transform-origin:top} to{transform:translateX(-50%) scaleY(1);transform-origin:top} }

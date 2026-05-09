@@ -26,7 +26,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="contact-section" id="contact" ref={containerRef}>
+    <section className="contact-section" ref={containerRef}>
       <div className="contact-inner">
         <p className="contact-eyebrow">06 / Let's Connect</p>
 
