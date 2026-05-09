@@ -5,8 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const STATS = [
   { value: 172, suffix: '+', label: 'Frames Shot' },
-  { value: 6,   suffix: '',  label: 'AI Projects' },
-  { value: 9.3, suffix: '',  label: 'GPA · KL University', decimal: true },
+  { value: 18,  suffix: '+', label: 'Projects' },
   { value: 4,   suffix: '+', label: 'Years Clicking' },
 ];
 

@@ -110,8 +110,7 @@ export default function About() {
               <h3 className="about-red-head">Education</h3>
               <p className="about-list">
                 KL UNIVERSITY<br />
-                BACHELOR OF TECHNOLOGY, 2022 - 2026<br />
-                <span style={{color: 'rgba(255,255,255,0.6)', fontSize: '0.8rem'}}>9.3 GPA</span>
+                BACHELOR OF TECHNOLOGY, 2022 - 2026
               </p>
             </div>
             <div className="about-col"></div>

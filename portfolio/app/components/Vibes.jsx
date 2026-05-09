@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 import { useRef } from 'react'
 
-const WORDS = ['CLOUDS', 'CODE', 'CURIOSITY', 'CHAOS', 'COLOUR', 'CRAFT']
+const WORDS = ['CLOUD', 'CODE', 'CURIOSITY', 'CHAOS', 'COLOUR', 'CRAFT']
 
 
 export default function Vibes() {
@@ -88,11 +88,7 @@ export default function Vibes() {
               <span className="sw-fill" aria-hidden="true">{word}</span>
             </div>
           ))}
-          <p className="vibes-statement">
-            "I find beauty in the overlooked — a cloud formation at dusk,
-            the elegance of a well-tuned agent pipeline, the quiet chaos
-            of a monsoon afternoon."
-          </p>
+
         </div>
 
         {/* Right — AI Terminal */}
