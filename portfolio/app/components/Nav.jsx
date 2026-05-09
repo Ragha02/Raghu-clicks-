@@ -1,12 +1,19 @@
 "use client";
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState, useCallback, useRef } from 'react'
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const navRef = useRef(null)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60)
+    const onScroll = () => {
+      setScrolled(window.scrollY > 60)
+      // Progress bar: how far scrolled through total page
+      const docH = document.documentElement.scrollHeight - window.innerHeight
+      const pct = docH > 0 ? (window.scrollY / docH) * 100 : 0
+      navRef.current?.style.setProperty('--scroll-pct', `${pct.toFixed(2)}%`)
+    }
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -27,7 +34,10 @@ export default function Nav() {
 
   return (
     <>
-      <nav className={`nav${scrolled ? ' scrolled' : ''}`} id="nav">
+      <nav className={`nav${scrolled ? ' scrolled' : ''}`} id="nav" ref={navRef}>
+        {/* Scroll progress bar */}
+        <div className="nav-progress" aria-hidden="true" />
+
         <div className="nav-logo">Raghu<span>.</span></div>
 
         {/* Desktop links */}
@@ -37,6 +47,7 @@ export default function Nav() {
           <a href="#experience" className="nav-link">Work</a>
           <a href="#vibes" className="nav-link">Vibes</a>
           <a href="#about" className="nav-link">Me</a>
+          <a href="#contact" className="nav-link">Say Hi</a>
         </div>
 
         <div className="nav-right">
@@ -61,6 +72,7 @@ export default function Nav() {
           <a href="#experience" onClick={close} className="mobile-nav-link">Work</a>
           <a href="#vibes" onClick={close} className="mobile-nav-link">Vibes</a>
           <a href="#about" onClick={close} className="mobile-nav-link">Me</a>
+          <a href="#contact" onClick={close} className="mobile-nav-link">Say Hi</a>
           <a href="https://github.com/Ragha02" target="_blank" rel="noreferrer" className="mobile-nav-link mobile-nav-cta">GitHub ↗</a>
         </nav>
       </div>
