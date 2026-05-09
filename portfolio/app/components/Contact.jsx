@@ -2,6 +2,7 @@
 import { useRef, useState, useEffect } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import EvilEye from './EvilEye';
 
 export default function Contact() {
   const containerRef = useRef(null);
@@ -27,7 +28,21 @@ export default function Contact() {
 
   return (
     <section className="contact-section" ref={containerRef}>
-      <div className="contact-inner">
+      <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+        <EvilEye
+          eyeColor="#e74c3c"
+          intensity={1.5}
+          pupilSize={0.6}
+          irisWidth={0.25}
+          glowIntensity={0.35}
+          scale={0.8}
+          noiseScale={1}
+          pupilFollow={1}
+          flameSpeed={1}
+          backgroundColor="#0f0505"
+        />
+      </div>
+      <div className="contact-inner" style={{ position: 'relative', zIndex: 1 }}>
         <p className="contact-eyebrow">06 / Let's Connect</p>
 
         <h2 className="contact-heading">

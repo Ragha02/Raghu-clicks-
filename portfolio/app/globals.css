@@ -1054,10 +1054,6 @@ a { text-decoration:none; color:inherit; }
   display: flex; align-items: center; justify-content: center;
   position: relative; overflow: hidden;
 }
-.contact-section::before {
-  content:''; position:absolute; inset:0; pointer-events:none;
-  background: radial-gradient(ellipse at 50% 100%, rgba(192,57,43,.12), transparent 65%);
-}
 .contact-inner {
   max-width: 900px; width: 100%; position: relative; z-index:1;
   text-align: center;
