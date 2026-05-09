@@ -1,7 +1,65 @@
 "use client";
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
-import { useRef } from 'react'
+import { useRef, useCallback } from 'react'
+
+// ── Editorial Magazine Card ────────────────────────────────────────
+function MagazineCard() {
+  const cardRef = useRef(null)
+
+  const onMouseMove = useCallback((e) => {
+    const card = cardRef.current
+    if (!card) return
+    const { left, top, width, height } = card.getBoundingClientRect()
+    const x = (e.clientX - left) / width  - 0.5   // -0.5 → 0.5
+    const y = (e.clientY - top)  / height - 0.5
+    gsap.to(card, {
+      rotateY: x * 10,
+      rotateX: -y * 10,
+      duration: 0.4,
+      ease: 'power2.out',
+      transformPerspective: 800,
+    })
+  }, [])
+
+  const onMouseLeave = useCallback(() => {
+    gsap.to(cardRef.current, {
+      rotateY: 0, rotateX: 0,
+      duration: 0.6, ease: 'elastic.out(1, 0.75)',
+    })
+  }, [])
+
+  return (
+    <div
+      className="mag-card"
+      ref={cardRef}
+      onMouseMove={onMouseMove}
+      onMouseLeave={onMouseLeave}
+    >
+      {/* Year badge */}
+      <div className="mag-badge">2026</div>
+
+      {/* Full-bleed photo */}
+      <div className="mag-photo">
+        <img src="/ragh 1.jpg" alt="Raghu" loading="lazy" decoding="async" />
+      </div>
+
+      {/* Bottom gradient overlay with name */}
+      <div className="mag-overlay">
+        <div className="mag-meta">CREATIVE ENGINEER · PHOTOGRAPHER</div>
+        <div className="mag-name">RAGHU</div>
+        <div className="mag-tagline">
+          <span>Building systems</span>
+          <span className="mag-dot">·</span>
+          <span>Capturing moments</span>
+        </div>
+      </div>
+
+      {/* Scanline texture */}
+      <div className="mag-scanline" aria-hidden="true" />
+    </div>
+  )
+}
 
 export default function About() {
   const containerRef = useRef(null)
@@ -103,38 +161,7 @@ export default function About() {
         </div>
 
         <div className="about-right">
-          <div className="scrapbook-folder">
-            <div className="folder-tab">Personal Information</div>
-            <div className="folder-body">
-              
-              <div className="marker-title">
-                CREATIVE ENGINEER
-                <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><line x1="0" y1="12" x2="24" y2="12"/><polyline points="18,6 24,12 18,18"/></svg>
-              </div>
-
-              <div className="polaroid-stack">
-                <div className="polaroid p-bg">
-                  <div className="p-photo bg-dark">
-                    <img src="/ragh 2 .jpg" alt="Raghu Background" />
-                  </div>
-                </div>
-                <div className="polaroid p-bg2">
-                  <div className="p-photo bg-red"></div>
-                </div>
-                
-                <div className="polaroid p-main">
-                  <div className="paperclip">
-                    <div className="clip-part1"></div>
-                    <div className="clip-part2"></div>
-                  </div>
-                  <div className="p-photo">
-                    <img src="/ragh 1.jpg" alt="Raghu" />
-                  </div>
-                  <div className="p-caption">RAGHU</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <MagazineCard />
         </div>
       </div>
     </section>
